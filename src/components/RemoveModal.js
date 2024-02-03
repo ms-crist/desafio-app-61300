@@ -16,12 +16,17 @@ const RemoveModal = ({
   return (
     <Modal animationType="slide" transparent visible={modalVisible}>
       <View style={styles.modalContainer}>
-        <Text style={{fontWeight: 'bold'}}>¿Quieres eliminar el producto?</Text>
         <Pressable onPress={() => setModalVisible(false)}>
-          <Text style={{color: 'red', fontWeight: 'bold'}}>❌No</Text>
+          <Text style={{ marginLeft: 150, fontSize: 20 }}>❎</Text>
+        </Pressable>
+        <Text style={{ fontWeight: "bold" }}>
+          ¿Quieres eliminar el producto?
+        </Text>
+        <Pressable onPress={() => setModalVisible(false)}>
+          <Text style={{ color: "red", fontWeight: "bold" }}>❌No</Text>
         </Pressable>
         <Pressable onPress={removeItem}>
-          <Text style={{color: 'green', fontWeight: 'bold'}}>✔Sí</Text>
+          <Text style={{ color: "green", fontWeight: "bold" }}>✔Sí</Text>
         </Pressable>
       </View>
     </Modal>
@@ -33,6 +38,9 @@ export default RemoveModal;
 const styles = StyleSheet.create({
   modalContainer: {
     height: 200,
+    width: 300,
+    alignSelf: "center",
+    marginTop: "20%",
     backgroundColor: "white",
     borderRadius: 20,
     padding: 35,
