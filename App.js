@@ -1,18 +1,10 @@
 import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Constants from "expo-constants";
-import {
-  Text,
-  View,
-  StyleSheet,
-  Pressable,
-  TextInput,
-} from "react-native";
+import { Text, View, StyleSheet, Pressable, TextInput } from "react-native";
 import RemoveModal from "./src/components/RemoveModal";
 import Lista from "./src/components/lista/Lista";
 import HeaderApp from "./src/components/HeaderApp";
-
-
 
 export default function App() {
   // useState y useEffect hooks para controlar el estado de la aplicación y el ciclo de vida de un componente
@@ -51,9 +43,8 @@ export default function App() {
         setModalVisible={setModalVisible}
         itemSelected={itemSelected}
       />
-     
-      <View style={styles.inputContainer}>
 
+      <View style={styles.inputContainer}>
         <TextInput
           onChangeText={handleInputChange}
           value={inputValue}
@@ -64,8 +55,7 @@ export default function App() {
           <Text style={{ fontSize: 40 }}>🆗</Text>
         </Pressable>
       </View>
-      <Lista cartItems={cartItems} 
-      handleModal={handleModal}></Lista>
+      <Lista cartItems={cartItems} handleModal={handleModal}></Lista>
     </View>
   );
 }
@@ -77,7 +67,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingTop: Constants.statusBarHeight,
   },
-  
+
   input: {
     borderColor: "gray",
     borderWidth: 1,
@@ -89,5 +79,6 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     flexDirection: "row",
+    marginTop: 20,
   },
 });
